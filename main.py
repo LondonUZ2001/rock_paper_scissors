@@ -4,7 +4,7 @@ from choice import show_choice
 # blal alala
 # importing a package random allowing us to randomly select the computer choice
 
-def main_function():  # we create a function which allows us to play again
+def start_function():  # we create a function which allows us to play again
     play()  # play logic
     while input("play again? (Y/N)").upper() == "Y":
         play()
@@ -74,4 +74,4 @@ def compare_choice(computer, user):
     return result[computer, user]
 
 
-main_function()
+start_function()
