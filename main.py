@@ -1,6 +1,6 @@
 import random
 from choice import show_choice
-
+from Computer import Computer
 # blal alala
 # importing a package random allowing us to randomly select the computer choice
 
@@ -18,9 +18,11 @@ def play():  # we create function
     while rounds != 4:
         print("___Round{}___".format(rounds))
         user = user_choice()
-        computer = computer_choice()
-        print(computer)
-        result = compare_choice(computer, user)
+        my_computer = Computer('rsp')
+        computer_choice = my_computer.get_choice()
+        print(show_choice(computer_choice))
+        print(computer_choice)
+        result = compare_choice(computer_choice, user)
         if result == "user":
             user_score += 1
         elif result == "computer":
@@ -46,12 +48,6 @@ def user_choice():
     user_ch = input("what is your choice? ")
     print(show_choice(user_ch))
     return (user_ch)
-
-
-def computer_choice():
-    computer_ch = random.choice("rsp")
-    print(show_choice(computer_ch))
-    return (computer_ch)
 
 
 # play again?
